@@ -1,6 +1,39 @@
 {
   "users": [],
-  "games": [],
+  "games": [
+    {
+      "id": 1,
+      "title": "Cyber Protocol: 2088",
+      "developer": "Nexus Interactive",
+      "releaseDate": "2024-10-15",
+      "price": 422500,
+      "originalPrice": 650000,
+      "genres": ["RPG", "Hành động"],
+      "platforms": ["Windows PC"],
+      "features": ["Chơi đơn"],
+      "rating": 4.8,
+      "reviewCount": 1420,
+      "cover": "/images/game-1.jpg",
+      "screenshots": ["/images/detail-1.jpg"],
+      "description": "Khám phá thành phố tương lai và vượt qua những thử thách."
+    },
+    {
+      "id": 2,
+      "title": "Abyssal Echoes: Zero",
+      "developer": "Nexus Interactive",
+      "releaseDate": "2024-09-20",
+      "price": 240000,
+      "originalPrice": 480000,
+      "genres": ["Phiêu lưu", "Thế giới mở"],
+      "platforms": ["Windows PC", "macOS"],
+      "features": ["Chơi đơn", "Co-op"],
+      "rating": 4.9,
+      "reviewCount": 3810,
+      "cover": "/images/game-2.jpg",
+      "screenshots": ["/images/game-2.jpg"],
+      "description": "Khám phá những ngôi đền cổ và bí mật dưới lòng đất."
+    }
+  ],
   "categories": [],
   "orders": [],
   "reviews": []
