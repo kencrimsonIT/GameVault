@@ -1,9 +1,8 @@
-import GameListPage from "../features/games/pages/GameListPage.tsx";
+import {RouterProvider} from 'react-router-dom'
+import {router} from './router'
 
 const App = () => {
-  return (
-     <GameListPage/>
-  );
+    return <RouterProvider router={router}/>
 }
 
 export default App
