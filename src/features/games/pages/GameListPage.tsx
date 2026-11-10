@@ -1,29 +1,31 @@
 import {useGetGamesQuery} from "../api/gameApi.ts";
 import GameCard from "../components/GameCard.tsx";
+import {useAppSelector} from "../../../store/hooks.ts";
 
 export default function GameListPage() {
     const {
-        data: games =[],
+        data: games = [],
         isLoading,
         error,
-    }= useGetGamesQuery();
-    if(isLoading) {
-        return (
-            <p>Dang tai game...</p>
-        )
+    } = useGetGamesQuery();
+    const wishlistCount = useAppSelector(state => state.wishlist.ids.length)
+
+    if (isLoading) {
+        return <p>Dang tai game...</p>
     }
-    if(error) {
-        return (
-            <p>khong tai duoc game.</p>
-        )
+
+    if (error) {
+        return <p>Khong tai duoc game.</p>
     }
-        return (
-            <main>
-                <h1>kham pha tro choi</h1>
-                <p>Co {games.length} game</p>
-                {games.map(game => (
-                    <GameCard key={game.id} game={game}/>
-                ))}
-            </main>
-        )
+
+    return (
+        <main>
+            <h1>Kham pha tro choi</h1>
+            <p>Co {games.length} game</p>
+            <p>Yeu thich: {wishlistCount}</p>
+            {games.map(game => (
+                <GameCard key={game.id} game={game}/>
+            ))}
+        </main>
+    )
 }
