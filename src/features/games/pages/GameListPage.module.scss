@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 $background: #111317;
+$surface: #1a1c1f;
 $border: #3b4a3f;
 $text: #e2e2e6;
 $text-muted: #bacbbc;
@@ -36,6 +37,18 @@ $font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
   margin-bottom: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid $border;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background-color: $surface;
 }
 
 .eyebrow {
