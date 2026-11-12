@@ -1,0 +1,44 @@
+$surface-lowest: #0c0e11;
+$border: #3b4a3f;
+$text: #e2e2e6;
+$text-muted: #bacbbc;
+$primary: #00f090;
+$font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  color: $text-muted;
+  font-family: $font-display;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.select {
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background-color: $surface-lowest;
+  color: $text;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
+
+  option {
+    background-color: $surface-lowest;
+  }
+}

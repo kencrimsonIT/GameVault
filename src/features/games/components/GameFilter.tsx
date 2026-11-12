@@ -1,4 +1,5 @@
-import {SlidersHorizontal} from "lucide-react";
+import {useState} from "react";
+import {ChevronDown, SlidersHorizontal} from "lucide-react";
 import type {GameFilters} from "../types/game.types.ts";
 import {priceRangeOptions} from "../utils/filterGames.ts";
 import styles from "./GameFilter.module.scss";
@@ -49,6 +50,8 @@ function CheckboxGroup({title, options, selected, onToggle}: CheckboxGroupProps)
 }
 
 export default function GameFilter({options, filters, activeCount, onChange, onReset}: Props) {
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
         <aside className={styles.panel}>
             <div className={styles.header}>
@@ -56,56 +59,73 @@ export default function GameFilter({options, filters, activeCount, onChange, onR
                     <SlidersHorizontal size={16}/>
                     Bộ lọc
                 </h2>
-                {activeCount > 0 && (
-                    <button type="button" className={styles.reset} onClick={onReset}>
-                        Xóa bộ lọc ({activeCount})
+                <div className={styles.actions}>
+                    {activeCount > 0 && (
+                        <button type="button" className={styles.reset} onClick={onReset}>
+                            Xóa bộ lọc ({activeCount})
+                        </button>
+                    )}
+                    <button
+                        type="button"
+                        className={styles.toggle}
+                        aria-expanded={isOpen}
+                        aria-controls="game-filter-groups"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? 'Ẩn' : 'Hiện'}
+                        <ChevronDown size={16} className={isOpen ? styles.chevronOpen : undefined}/>
                     </button>
-                )}
+                </div>
             </div>
 
-            <CheckboxGroup
-                title="Thể loại"
-                options={options.genres}
-                selected={filters.genres}
-                onToggle={value => onChange({...filters, genres: toggleValue(filters.genres, value)})}
-            />
+            <div
+                id="game-filter-groups"
+                className={isOpen ? `${styles.groups} ${styles.groupsOpen}` : styles.groups}
+            >
+                <CheckboxGroup
+                    title="Thể loại"
+                    options={options.genres}
+                    selected={filters.genres}
+                    onToggle={value => onChange({...filters, genres: toggleValue(filters.genres, value)})}
+                />
 
-            <CheckboxGroup
-                title="Nền tảng"
-                options={options.platforms}
-                selected={filters.platforms}
-                onToggle={value => onChange({...filters, platforms: toggleValue(filters.platforms, value)})}
-            />
+                <CheckboxGroup
+                    title="Nền tảng"
+                    options={options.platforms}
+                    selected={filters.platforms}
+                    onToggle={value => onChange({...filters, platforms: toggleValue(filters.platforms, value)})}
+                />
 
-            <fieldset className={styles.group}>
-                <legend className={styles.groupTitle}>Khoảng giá</legend>
-                {priceRangeOptions.map(option => (
-                    <label key={option.value} className={styles.option}>
+                <fieldset className={styles.group}>
+                    <legend className={styles.groupTitle}>Khoảng giá</legend>
+                    {priceRangeOptions.map(option => (
+                        <label key={option.value} className={styles.option}>
+                            <input
+                                type="radio"
+                                name="priceRange"
+                                checked={filters.priceRange === option.value}
+                                onChange={() => onChange({...filters, priceRange: option.value})}
+                            />
+                            {option.label}
+                        </label>
+                    ))}
+                    <label className={`${styles.option} ${styles.highlight}`}>
                         <input
-                            type="radio"
-                            name="priceRange"
-                            checked={filters.priceRange === option.value}
-                            onChange={() => onChange({...filters, priceRange: option.value})}
+                            type="checkbox"
+                            checked={filters.onSaleOnly}
+                            onChange={event => onChange({...filters, onSaleOnly: event.target.checked})}
                         />
-                        {option.label}
+                        Chỉ hiện đang giảm giá
                     </label>
-                ))}
-                <label className={`${styles.option} ${styles.highlight}`}>
-                    <input
-                        type="checkbox"
-                        checked={filters.onSaleOnly}
-                        onChange={event => onChange({...filters, onSaleOnly: event.target.checked})}
-                    />
-                    Chỉ hiện đang giảm giá
-                </label>
-            </fieldset>
+                </fieldset>
 
-            <CheckboxGroup
-                title="Tính năng"
-                options={options.features}
-                selected={filters.features}
-                onToggle={value => onChange({...filters, features: toggleValue(filters.features, value)})}
-            />
+                <CheckboxGroup
+                    title="Tính năng"
+                    options={options.features}
+                    selected={filters.features}
+                    onToggle={value => onChange({...filters, features: toggleValue(filters.features, value)})}
+                />
+            </div>
         </aside>
     )
 }

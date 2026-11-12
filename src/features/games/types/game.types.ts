@@ -31,3 +31,4 @@ export type GameFilters = {
     priceRange: PriceRange
     onSaleOnly: boolean
 }
+export type SortOption = 'popular' | 'rating' | 'newest' | 'priceAsc' | 'priceDesc'

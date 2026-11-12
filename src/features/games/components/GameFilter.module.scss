@@ -57,7 +57,7 @@ $font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
 .group {
   min-width: 0;
   margin: 0;
-  padding: 16px 0;
+  padding: 0 0 16px;
   border: none;
   border-bottom: 1px solid $border;
 
@@ -68,12 +68,11 @@ $font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
 }
 
 .groupTitle {
-  padding: 0;
+  padding: 16px 0 0;
   color: $text;
   font-size: 14px;
   font-weight: 600;
 }
-
 .option {
   display: flex;
   align-items: center;
@@ -94,4 +93,48 @@ $font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
 
 .highlight {
   color: $primary;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background: transparent;
+  color: $text;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+
+  svg {
+    transition: transform 0.2s;
+  }
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.groups {
+  display: none;
+
+  @media (min-width: 900px) {
+    display: block;
+  }
+}
+
+.groupsOpen {
+  display: block;
 }
