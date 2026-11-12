@@ -50,7 +50,14 @@ $font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
   border-radius: 4px;
   background-color: $surface;
 }
+.layout {
+  display: grid;
+  gap: 24px;
 
+  @media (min-width: 900px) {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+}
 .eyebrow {
   display: flex;
   align-items: center;

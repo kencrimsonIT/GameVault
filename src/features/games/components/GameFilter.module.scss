@@ -1,0 +1,97 @@
+$surface: #1a1c1f;
+$border: #3b4a3f;
+$text: #e2e2e6;
+$text-muted: #bacbbc;
+$primary: #00f090;
+$font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+
+.panel {
+  align-self: start;
+  padding: 16px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background-color: $surface;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: $text;
+  font-family: $font-display;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  svg {
+    color: $primary;
+  }
+}
+
+.reset {
+  padding: 0;
+  border: none;
+  background: none;
+  color: $primary;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.group {
+  min-width: 0;
+  margin: 0;
+  padding: 16px 0;
+  border: none;
+  border-bottom: 1px solid $border;
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.groupTitle {
+  padding: 0;
+  color: $text;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  color: $text-muted;
+  font-size: 14px;
+  cursor: pointer;
+
+  input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: $primary;
+    cursor: pointer;
+  }
+}
+
+.highlight {
+  color: $primary;
+}

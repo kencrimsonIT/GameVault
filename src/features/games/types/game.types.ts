@@ -22,3 +22,12 @@ export type Game = {
         recommended: Requirement[]
     }
 }
+export type PriceRange = 'all' | 'free' | 'under200' | 'from200to500' | 'over500'
+
+export type GameFilters = {
+    genres: string[]
+    platforms: string[]
+    features: string[]
+    priceRange: PriceRange
+    onSaleOnly: boolean
+}
