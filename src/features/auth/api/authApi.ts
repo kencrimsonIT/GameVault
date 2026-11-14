@@ -3,6 +3,7 @@ import { axiosInstance } from '../../../services/axios'
 import type {
     AuthSession,
     LoginCredentials,
+    PasswordRecoveryRequest,
     RegisterPayload,
     User,
     UserRecord,
@@ -62,6 +63,21 @@ export const authApi = {
             token: createToken(),
             user: toUser(record),
         }
+    },
+
+    async requestPasswordReset(payload: PasswordRecoveryRequest): Promise<void> {
+        const email = normalizeEmail(payload.email)
+        const record = await findUserByEmail(email)
+
+        if (!record) {
+            throw new AuthApiError('Không tìm thấy tài khoản với email này')
+        }
+
+        if (record.status === 'suspended') {
+            throw new AuthApiError('Tài khoản của bạn đã bị tạm khóa')
+        }
+
+        // Demo storefront has no mail service, so the recovery email is simulated.
     },
 
     async register(payload: RegisterPayload): Promise<AuthSession> {
