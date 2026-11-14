@@ -47,6 +47,10 @@ export interface RegisterPayload {
     password: string
 }
 
+export interface PasswordRecoveryRequest {
+    email: string
+}
+
 export interface AuthSession {
     token: string
     user: User
