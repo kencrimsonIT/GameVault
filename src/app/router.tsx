@@ -1,5 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom'
 import AuthPage from '../features/auth/pages/AuthPage'
+import ForgotPasswordPage from '../features/auth/pages/ForgotPasswordPage'
 import RequireAuth from '../features/auth/components/RequireAuth'
 import AuthLayout from '../layouts/AuthLayout'
 import MainLayout from '../layouts/MainLayout'
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: '/auth',
         element: <AuthPage />,
+      },
+      {
+        path: '/auth/forgot-password',
+        element: <ForgotPasswordPage />,
       },
     ],
   },
