@@ -2,6 +2,7 @@ export { default as LoginForm } from './components/LoginForm'
 export { default as RegisterForm } from './components/RegisterForm'
 export { default as RequireAuth } from './components/RequireAuth'
 export { default as AuthPage } from './pages/AuthPage'
+export { default as ForgotPasswordPage } from './pages/ForgotPasswordPage'
 export { default as authReducer, clearAuthError, logout, login, register } from './slices/authSlice'
 export {
     selectAuthError,
@@ -10,4 +11,10 @@ export {
     selectAuthUser,
     selectIsAuthenticated,
 } from './slices/authSlice'
-export type { AuthSession, LoginCredentials, RegisterPayload, User } from './types/auth.types'
+export type {
+    AuthSession,
+    LoginCredentials,
+    PasswordRecoveryRequest,
+    RegisterPayload,
+    User,
+} from './types/auth.types'
