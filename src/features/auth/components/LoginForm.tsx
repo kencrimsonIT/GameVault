@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { AlertCircle, ArrowRight, Eye, EyeOff, Loader2, Lock, Mail } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import { login, selectAuthError, selectAuthStatus } from '../slices/authSlice'
 import { loginSchema } from '../validation'
@@ -118,9 +118,9 @@ const LoginForm = ({ onSwitchToRegister }: LoginFormProps) => {
                     <input className={styles.checkbox} type="checkbox" {...register('rememberMe')}/>
                     <span>Ghi nhớ đăng nhập</span>
                 </label>
-                <a className={styles.link} href="#">
+                <Link className={styles.link} to="/auth/forgot-password">
                     Quên mật khẩu?
-                </a>
+                </Link>
             </div>
 
             <button className={styles.submit} type="submit" disabled={isPending}>
