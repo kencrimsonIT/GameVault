@@ -4,7 +4,7 @@ import {formatCurrency} from "../../../utils/formatCurrency.ts";
 import {useAppDispatch, useAppSelector} from "../../../store/hooks.ts";
 import {toggleWishlist} from "../../wishlist/slices/wishlistSlice.ts";
 import styles from "./GameCard.module.scss";
-
+import {Link} from "react-router-dom";
 type Props = {
     game: Game;
 }
@@ -25,8 +25,9 @@ export default function GameCard({game}: Props) {
     return (
         <article className={styles.card}>
             <div className={styles.media}>
-                <img className={styles.cover} src={game.cover} alt={game.title} loading="lazy"/>
-
+                <Link to={`/games/${game.id}`} className={styles.coverLink}>
+                    <img className={styles.cover} src={game.cover} alt={game.title} loading="lazy"/>
+                </Link>
                 {hasDiscount && (
                     <span className={styles.discount}>-{discountPercent}%</span>
                 )}
@@ -51,8 +52,9 @@ export default function GameCard({game}: Props) {
                     ))}
                 </div>
 
-                <h2 className={styles.title}>{game.title}</h2>
-
+                <h2 className={styles.title}>
+                    <Link to={`/games/${game.id}`} className={styles.titleLink}>{game.title}</Link>
+                </h2>
                 <div className={styles.rating}>
                     <Star size={14} className={styles.star}/>
                     <strong>{game.rating}</strong>

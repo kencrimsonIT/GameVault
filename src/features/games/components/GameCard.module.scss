@@ -157,3 +157,16 @@ $font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
     color: $primary;
   }
 }
+.coverLink {
+  display: block;
+  height: 100%;
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
