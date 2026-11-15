@@ -1,0 +1,239 @@
+$background: #111317;
+$surface: #1a1c1f;
+$surface-lowest: #0c0e11;
+$border: #3b4a3f;
+$text: #e2e2e6;
+$text-muted: #bacbbc;
+$primary: #00f090;
+$on-primary: #00210f;
+$star: #f5b544;
+$font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+$font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
+
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 32px 16px;
+  background-color: $background;
+  color: $text;
+  font-family: $font-body;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.status {
+  padding: 48px 0 16px;
+  color: $text-muted;
+  text-align: center;
+}
+
+.backLink {
+  display: block;
+  color: $primary;
+  text-align: center;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: $text-muted;
+  font-size: 14px;
+
+  a {
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  span:last-child {
+    color: $text;
+  }
+}
+
+.top {
+  display: grid;
+  gap: 24px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start;
+  }
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid $border;
+  border-radius: 4px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background-color: $surface;
+}
+
+.title {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(28px, 4vw, 36px);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0;
+
+  dt {
+    color: $text-muted;
+    font-size: 12px;
+  }
+
+  dd {
+    margin: 4px 0 0;
+    font-size: 14px;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: $text-muted;
+
+  strong {
+    color: $text;
+  }
+}
+
+.star {
+  color: $star;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 2px 8px;
+  border: 1px solid $border;
+  border-radius: 2px;
+  color: $text-muted;
+  font-size: 12px;
+}
+
+.priceBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background-color: $surface-lowest;
+}
+
+.discount {
+  padding: 2px 8px;
+  border-radius: 2px;
+  background-color: $primary;
+  color: $on-primary;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.oldPrice {
+  color: $text-muted;
+  text-decoration: line-through;
+}
+
+.price {
+  margin-left: auto;
+  color: $primary;
+  font-family: $font-display;
+  font-size: 28px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primaryButton {
+  border: none;
+  background-color: $primary;
+  color: $on-primary;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.secondaryButton {
+  border: 1px solid $border;
+  background: transparent;
+  color: $text;
+
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+.active {
+  border-color: $primary;
+  color: $primary;
+}
+
+.note {
+  margin: -8px 0 0;
+  color: $text-muted;
+  font-size: 12px;
+  text-align: center;
+}
+
+.section {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background-color: $surface;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-family: $font-display;
+  font-size: 20px;
+}
+
+.description {
+  margin: 0;
+  color: $text-muted;
+  line-height: 1.7;
+}
