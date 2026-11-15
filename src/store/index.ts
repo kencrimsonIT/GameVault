@@ -1,19 +1,23 @@
 import {configureStore} from "@reduxjs/toolkit";
 import cartReducer from "../features/cart/slices/cartSlice";
+import profileReducer from "../features/profile/slices/profileSlice";
 import {setStorage} from "../services/storage";
-import {CART_STORAGE_KEY} from "../utils/constants";
+import {CART_STORAGE_KEY, PROFILE_STORAGE_KEY} from "../utils/constants";
 
 export const store = configureStore({
     reducer: {
         // auth: ,
         cart: cartReducer,
+        profile: profileReducer,
         // wishlist:
     },
 });
 
-// Sync cart to storage
+// Sync to storage
 store.subscribe(() => {
-    setStorage(CART_STORAGE_KEY, store.getState().cart.items);
+    const state = store.getState();
+    setStorage(CART_STORAGE_KEY, state.cart.items);
+    setStorage(PROFILE_STORAGE_KEY, state.profile.profile);
 });
 
 export type RootState = ReturnType<typeof store.getState>;
