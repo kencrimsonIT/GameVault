@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+// Design tokens from the GameVault 404 mock
+$background: #111317;
+$surface-container-lowest: #0c0e11;
+$surface-container-low: #1a1c1f;
+$surface-container: #1e2023;
+$surface-container-high: #282a2d;
+$surface-container-highest: #333538;
+$surface-bright: #37393d;
+$outline: #849587;
+$outline-variant: #3b4a3f;
+$on-surface: #e2e2e6;
+$on-surface-variant: #bacbbc;
+$on-primary-fixed: #00210f;
+$primary-container: #00f090;
+$primary-fixed-dim: #00e388;
+
+$font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+$font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
+
+:global(body) {
+  margin: 0;
+  background-color: $background;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $background;
+  color: $on-surface;
+  font-family: $font-body;
+  -webkit-font-smoothing: antialiased;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+}
+
+// Header
+.header {
+  width: 100%;
+  background-color: $surface-container-low;
+  border-bottom: 1px solid $outline-variant;
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1600px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.headerGroup {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  font-family: $font-display;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: $on-surface;
+}
+
+.brandMark {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: $primary-container;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-family: $font-display;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: $on-surface-variant;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: $on-surface;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search {
+  display: none;
+  position: relative;
+  align-items: center;
+
+  @media (min-width: 640px) {
+    display: flex;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.625rem;
+  color: $on-surface-variant;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 16rem;
+  height: 36px;
+  padding: 0 0.75rem 0 2.25rem;
+  background-color: $surface-container;
+  color: $on-surface;
+  border: 1px solid $outline-variant;
+  border-radius: 0.5rem;
+  font-size: 12px;
+  line-height: 18px;
+  outline: none;
+
+  &::placeholder {
+    color: $outline;
+  }
+
+  &:focus {
+    border-color: $primary-container;
+  }
+
+  @media (min-width: 1024px) {
+    width: 20rem;
+  }
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: $on-surface-variant;
+  cursor: pointer;
+  transition: color 150ms ease,
+  background-color 150ms ease;
+
+  &:hover {
+    color: $on-surface;
+    background-color: $surface-container;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+// Main content
+.main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+}
+
+.errorVisual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+.errorCode {
+  display: block;
+  font-family: $font-display;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $surface-container-highest;
+  opacity: 0.7;
+
+  @media (min-width: 768px) {
+    font-size: 96px;
+    line-height: 104px;
+  }
+}
+
+.signalBadge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background-color: $surface-container;
+  border: 1px solid $outline-variant;
+  border-radius: 0.5rem;
+  font-family: $font-display;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $on-surface;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.signalDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: $primary-container;
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.signalIcon {
+  color: $primary-container;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.title {
+  margin: 0 0 0.25rem;
+  font-family: $font-display;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: $on-surface;
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+  }
+}
+
+.description {
+  max-width: 480px;
+  margin: 0 0 1.5rem;
+  font-size: 14px;
+  line-height: 22px;
+  color: $on-surface-variant;
+}
+
+.searchForm {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.searchField {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: $surface-container-low;
+  border: 1px solid $outline-variant;
+  border-radius: 0.5rem;
+
+  &:focus-within {
+    border-color: $primary-container;
+  }
+}
+
+.searchFieldIcon {
+  position: absolute;
+  left: 0.875rem;
+  color: $on-surface-variant;
+  pointer-events: none;
+}
+
+.searchFieldInput {
+  width: 100%;
+  padding: 0.75rem 7rem 0.75rem 2.75rem;
+  background-color: transparent;
+  border: none;
+  color: $on-surface;
+  font-size: 14px;
+  line-height: 22px;
+  outline: none;
+
+  &::placeholder {
+    color: $outline;
+  }
+}
+
+.searchSubmit {
+  position: absolute;
+  right: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  background-color: $primary-container;
+  border: none;
+  border-radius: 0.25rem;
+  color: $on-primary-fixed;
+  font-family: $font-display;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+
+  &:hover {
+    background-color: $primary-fixed-dim;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-family: $font-display;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 150ms ease,
+  border-color 150ms ease;
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  @media (min-width: 640px) {
+    min-width: 180px;
+    width: auto;
+  }
+}
+
+.primaryButton {
+  background-color: $primary-container;
+  color: $on-primary-fixed;
+
+  &:hover {
+    background-color: $primary-fixed-dim;
+  }
+}
+
+.secondaryButton {
+  background-color: $surface-container;
+  border: 1px solid $outline-variant;
+  color: $on-surface;
+
+  &:hover {
+    background-color: $surface-bright;
+  }
+}
+
+// Trending games
+.suggested {
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid $outline-variant;
+  text-align: left;
+}
+
+.suggestedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.suggestedTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-display;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $on-surface;
+}
+
+.suggestedIcon {
+  color: $primary-container;
+}
+
+.trendingLabel {
+  font-family: $font-display;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: $outline;
+}
+
+.gamesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gameCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem;
+  background-color: $surface-container;
+  border: 1px solid $outline-variant;
+  border-radius: 0.5rem;
+  transition: border-color 150ms ease;
+
+  &:hover {
+    border-color: $primary-container;
+
+    .gameTitle {
+      color: $primary-container;
+    }
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.gameCover {
+  flex-shrink: 0;
+  width: 48px;
+  height: 56px;
+  object-fit: cover;
+  background-color: $surface-container-lowest;
+  border-radius: 0.25rem;
+}
+
+.gameInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.gameTitle {
+  margin: 0;
+  overflow: hidden;
+  font-family: $font-display;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $on-surface;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 150ms ease;
+}
+
+.gameGenre {
+  margin: 0;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 18px;
+  color: $on-surface-variant;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gameMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.125rem;
+}
+
+.discountBadge {
+  padding: 0 0.25rem;
+  background-color: $primary-container;
+  border-radius: 0.125rem;
+  font-family: $font-display;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  color: $on-primary-fixed;
+}
+
+.hotBadge {
+  padding: 0 0.25rem;
+  border: 1px solid $outline-variant;
+  border-radius: 0.125rem;
+  font-family: $font-display;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  color: $primary-container;
+}
+
+.price,
+.priceMuted {
+  font-family: $font-display;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+}
+
+.price {
+  color: $on-surface;
+}
+
+.priceMuted {
+  color: $outline;
+}
+
+// Footer
+.footer {
+  width: 100%;
+  background-color: $surface-container-lowest;
+  border-top: 1px solid $outline-variant;
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.footerName {
+  font-family: $font-display;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $on-surface;
+}
+
+.footerDivider {
+  display: none;
+  color: $outline;
+
+  @media (min-width: 640px) {
+    display: inline;
+  }
+}
+
+.footerCopyright {
+  font-size: 12px;
+  line-height: 18px;
+  color: $on-surface-variant;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  a {
+    font-size: 12px;
+    line-height: 18px;
+    color: $on-surface-variant;
+    transition: color 150ms ease;
+
+    &:hover {
+      color: $on-surface;
+    }
+  }
+}
