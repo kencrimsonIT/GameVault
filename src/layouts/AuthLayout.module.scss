@@ -1,0 +1,167 @@
+@use '../styles/variables' as *;
+
+:global(body) {
+  margin: 0;
+  background-color: $color-background;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-background;
+  color: $color-on-surface;
+  font-family: $font-body;
+  -webkit-font-smoothing: antialiased;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+  }
+}
+
+.header {
+  width: 100%;
+  background-color: $color-surface-container-low;
+  border-bottom: 1px solid $color-outline-variant;
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-display;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: $color-on-surface;
+}
+
+.brandIcon {
+  color: $color-primary-container;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: $font-display;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: $color-on-surface-variant;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: $color-on-surface;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: $color-surface-container-lowest;
+  border-top: 1px solid $color-outline-variant;
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.footerName {
+  font-family: $font-display;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $color-on-surface;
+}
+
+.footerCopyright {
+  font-size: 12px;
+  line-height: 18px;
+  color: $color-on-surface-variant;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  a {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-on-surface-variant;
+    transition: color 150ms ease;
+
+    &:hover {
+      color: $color-on-surface;
+    }
+  }
+}
