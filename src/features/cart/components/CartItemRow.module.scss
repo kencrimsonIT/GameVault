@@ -1,0 +1,110 @@
+@use "../../../styles/variables" as *;
+
+.item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  grid-template-areas:
+    "cover info remove"
+    "cover price price";
+  align-items: center;
+  gap: 8px 16px;
+  padding: 16px;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  background-color: $surface-container-low;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 96px 1fr auto auto;
+    grid-template-areas: "cover info price remove";
+    gap: 20px;
+  }
+}
+
+.cover {
+  grid-area: cover;
+  width: 72px;
+  height: 96px;
+  border-radius: 8px;
+  background-color: $surface-container-high;
+  object-fit: cover;
+
+  @media (min-width: 640px) {
+    width: 96px;
+    height: 128px;
+  }
+}
+
+.info {
+  grid-area: info;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-family: $font-display;
+  font-size: 18px;
+  font-weight: 600;
+  color: $on-surface;
+}
+
+.developer {
+  margin: 0;
+  font-size: 14px;
+  color: $on-surface-variant;
+}
+
+.priceBox {
+  grid-area: price;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discount {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: $primary-container;
+  font-size: 13px;
+  font-weight: 700;
+  color: $on-primary-fixed;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.originalPrice {
+  font-size: 13px;
+  color: $on-surface-variant;
+  text-decoration: line-through;
+}
+
+.price {
+  font-family: $font-display;
+  font-size: 18px;
+  color: $on-surface;
+}
+
+.removeButton {
+  grid-area: remove;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: $on-surface-variant;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background-color: $surface-container-high;
+    color: $error;
+  }
+}
