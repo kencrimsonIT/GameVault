@@ -6,6 +6,13 @@ export const store = configureStore({
     reducer: {
         [gameApi.reducerPath]: gameApi.reducer,
         wishlist: wishlistReducer,
+import authReducer from "../features/auth/slices/authSlice";
+
+export const store = configureStore({
+    reducer: {
+        auth: authReducer,
+        // cart: ,
+        // wishlist:
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(gameApi.middleware),
 });
