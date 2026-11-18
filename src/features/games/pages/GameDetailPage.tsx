@@ -1,6 +1,7 @@
 import {Link, useParams} from "react-router-dom";
 import {Heart, ShoppingCart, Star} from "lucide-react";
 import {useGetGameByIdQuery} from "../api/gameApi.ts";
+import GameGallery from "../components/GameGallery.tsx";
 import {formatCurrency} from "../../../utils/formatCurrency.ts";
 import {formatDate} from "../../../utils/formatDate.ts";
 import {useAppDispatch, useAppSelector} from "../../../store/hooks.ts";
@@ -48,8 +49,7 @@ export default function GameDetailPage() {
                 </nav>
 
                 <div className={styles.top}>
-                    <img className={styles.cover} src={game.cover} alt={game.title}/>
-
+                    <GameGallery key={game.id} images={game.screenshots} title={game.title}/>
                     <section className={styles.info}>
                         <h1 className={styles.title}>{game.title}</h1>
 
