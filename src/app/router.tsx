@@ -12,6 +12,15 @@ import GameDetailPage from '../features/games/pages/GameDetailPage'
 
 export const router = createBrowserRouter([
     {
+        element: <MainLayout/>,
+        children: [
+            {
+                path: '/',
+                element: <HomePage/>,
+            },
+        ],
+    },
+    {
         path: '/games',
         element: <GameListPage/>,
     },
@@ -20,8 +29,26 @@ export const router = createBrowserRouter([
         element: <GameDetailPage/>,
     },
     {
-        path: '/403',
-        element: <ForbiddenPage/>,
+        element: <AuthLayout/>,
+        children: [
+            {
+                path: '/auth',
+                element: <AuthPage/>,
+            },
+            {
+                path: '/auth/forgot-password',
+                element: <ForgotPasswordPage/>,
+            },
+        ],
+    },
+    {
+        element: <RequireAuth/>,
+        children: [
+            {
+                path: '/admin',
+                element: <ForbiddenPage/>,
+            },
+        ],
     },
     {
         path: '*',
