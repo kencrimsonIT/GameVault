@@ -10,7 +10,17 @@ export const store = configureStore({
         cart: cartReducer,
         profile: profileReducer,
         // wishlist:
+import {gameApi} from "../features/games/api/gameApi.ts";
+import wishlistReducer from "../features/wishlist/slices/wishlistSlice.ts";
+import authReducer from "../features/auth/slices/authSlice";
+
+export const store = configureStore({
+    reducer: {
+        auth: authReducer,
+        [gameApi.reducerPath]: gameApi.reducer,
+        wishlist: wishlistReducer,
     },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(gameApi.middleware),
 });
 
 // Sync to storage

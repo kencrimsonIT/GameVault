@@ -1,6 +1,444 @@
 {
-  "users": [],
-  "games": [],
+  "users": [
+    {
+      "id": 1,
+      "userCode": "VAULT-99214",
+      "fullName": "Nguyễn Hoàng Alex",
+      "displayName": "Alex Nguyen",
+      "gamertag": "AlexNguyen_Pro",
+      "gamertagVerified": true,
+      "email": "alex.nguyen@gamevault.io",
+      "password": "Alex@Vault2024",
+      "phone": "+84 987 654 321",
+      "avatar": "https://i.pravatar.cc/200?img=47",
+      "country": "VN",
+      "currency": "VND",
+      "role": "user",
+      "rank": "VAULT MASTER",
+      "isVerified": true,
+      "walletBalance": 2450000,
+      "rewardPoints": 12890,
+      "ownedKeysCount": 18,
+      "wishlist": [],
+      "authProviders": ["email"],
+      "lastLoginIp": "192.168.1.84",
+      "status": "active",
+      "createdAt": "2024-01-15T08:30:00.000Z",
+      "updatedAt": "2026-11-06T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "userCode": "VAULT-10001",
+      "fullName": "Trần Minh Quân",
+      "displayName": "Commander",
+      "gamertag": "Commander_VN",
+      "gamertagVerified": true,
+      "email": "commander@gamevault.io",
+      "password": "Vault@Commander24!",
+      "phone": "+84 912 345 678",
+      "avatar": "https://i.pravatar.cc/200?img=12",
+      "country": "VN",
+      "currency": "VND",
+      "role": "user",
+      "rank": "VAULT LEGEND",
+      "isVerified": true,
+      "walletBalance": 9800000,
+      "rewardPoints": 45200,
+      "ownedKeysCount": 54,
+      "wishlist": [],
+      "authProviders": ["email", "steam", "discord"],
+      "lastLoginIp": "113.161.72.10",
+      "status": "active",
+      "createdAt": "2023-06-01T03:00:00.000Z",
+      "updatedAt": "2026-10-20T14:20:00.000Z"
+    },
+    {
+      "id": 3,
+      "userCode": "VAULT-99877",
+      "fullName": "Lê Thu Hà",
+      "displayName": "Ha Le",
+      "gamertag": "HaLe_Gamer",
+      "gamertagVerified": false,
+      "email": "ha.le@gmail.com",
+      "password": "Hale@123456",
+      "phone": "+84 903 111 222",
+      "avatar": "https://i.pravatar.cc/200?img=32",
+      "country": "VN",
+      "currency": "VND",
+      "role": "user",
+      "rank": "ROOKIE",
+      "isVerified": false,
+      "walletBalance": 150000,
+      "rewardPoints": 320,
+      "ownedKeysCount": 2,
+      "wishlist": [],
+      "authProviders": ["google"],
+      "lastLoginIp": "27.72.99.5",
+      "status": "active",
+      "createdAt": "2026-09-10T09:00:00.000Z",
+      "updatedAt": "2026-09-10T09:00:00.000Z"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "title": "Cyber Protocol: 2088",
+      "developer": "Nexus Interactive",
+      "releaseDate": "2024-10-15",
+      "price": 422500,
+      "originalPrice": 650000,
+      "genres": ["RPG", "Hành động"],
+      "platforms": ["Windows PC"],
+      "features": ["Chơi đơn"],
+      "rating": 4.8,
+      "reviewCount": 1420,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuAvZZbpAt7m7ViKnMZkfsukV6D42xnBpWWMY2pEkCJkV34O1aXSKeOVMORzR8NdzqplSpEze9Z4ZZfe93nITc_IpeXm3WymXUZdQjL2-d_4jGBMohLd-uVlfJ8nyPdM7B9FLMeyTKBjmIGFlMQzM_XPeya5BjP-9cSuOAiyOO0JvXqgow7PQdqjLq5bhLh7nvibRjPlYx_bnI6apYmBFKsXseFYUYqN6hwo5JpRMIE",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuAvZZbpAt7m7ViKnMZkfsukV6D42xnBpWWMY2pEkCJkV34O1aXSKeOVMORzR8NdzqplSpEze9Z4ZZfe93nITc_IpeXm3WymXUZdQjL2-d_4jGBMohLd-uVlfJ8nyPdM7B9FLMeyTKBjmIGFlMQzM_XPeya5BjP-9cSuOAiyOO0JvXqgow7PQdqjLq5bhLh7nvibRjPlYx_bnI6apYmBFKsXseFYUYqN6hwo5JpRMIE", "https://lh3.googleusercontent.com/aida-public/AB6AXuDTIkP_COp0n2OPbiS70X6vD5O1OmNatIpycoAFdRio3tOOlVUzJJ605mpeZLXbxDU4nWf7WqRqAq798fSiYLslYrH3JpOgqj4zTSZrdNfTe9pcxtgZwxXqJChqqyEpb4WE0kivGP2KVpmGwNpFjpKDy7XosoXspcgg-mFAIKWyE6XcgpobP7ZisnHE_UKQ-dPuM5yTXo1-LICOeCncEkqkKtsuTPNURlI65w-W61A", "https://lh3.googleusercontent.com/aida-public/AB6AXuCkBrZ1BDVvBk0XWW_33jwjAy57wqE8TYVSklRk-Rt9ShbDx2ixexAxeFc_tHtKFJ1uOo6IowW5fgG8cQVjj2BpED57ERjGMg9B0o-6Cfj6pC00flqmcvLOc3tUv8dhJzb7AvDtcTv3llHgbCyMWzilkbVf4d7RpHsnVIjGaVTIfJi4qTcd9li6_fp5dpypc50dmEvYxJbmYJ2uYi7bWA-28Rm-HHFyMdQyCdUSyBc", "https://lh3.googleusercontent.com/aida-public/AB6AXuCBbeKWkvHRD5tsJAcY-kkf5aH1VedcpSQj8lggBmwFgXI6LZqxgIh_uSFYpIzUHA9A5m2jI67H33v1kDx6Bf8KPjhFU2CBlWKI-6G6UMhvPmstqm_SdmG40Vn3VLtkp5WGPAKCkJuK-8Dp1H4MFWII7vmsHn_UWUGPNgetigFALfLoCb_tKCrZfrQGQN7FYu6P4SDRNjmYtDLlC7JyDy0lm22vZwKGHGU7L5IBQNE", "https://lh3.googleusercontent.com/aida-public/AB6AXuCHwwXzzu5m-IjfHYIEB1NSrxUUibZuMDID7xZci8q941CTqSBQEc-4RmS0gQBq9FOlGABrJJuDdQQ9O2eG-jG7Kr5n7i6_m_frdU8UyqD1uAbONEhGSxmzDd9rHRdkXaG9Upqcq_9LvWBjdA0Dkp9WjK450lsnkaKPF6yeWzOuaBRduuhycEZ0MX8bSbdRDF75BTtB60M3kUsuQUu1UwBXVjjnq9PIpjHzY5ksH-U", "https://lh3.googleusercontent.com/aida-public/AB6AXuBiyvXr8z2p0DlpRQQes-M3mg-YeYAap3I2iAvudUKnGZGDV-fS7T7b_MNbB8WV4r97UJWxnf01945yap1JC4HO8mf-6U9nNmZ78_O85pyqWJACvN7SsnHr23vwYV9PpIMq2MlI4jlX2OMXfONJcP2qcwb8VSzcVvNt3XJ-aPSsupfphGbR1oNHRNCWGN5c__Rw7BucjEdz8_Pqv_mX_EytHAowov1jtP375_f4_Jw"],
+      "description": "Khám phá thành phố tương lai và vượt qua những thử thách.",
+      "requirements": {
+        "minimum": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 10 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i5-8400 / AMD Ryzen 5 2600"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "16 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA GTX 1060 6GB / RX 580 8GB"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "85 GB SSD"
+          }
+        ],
+        "recommended": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 11 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i7-12700 / AMD Ryzen 7 7700X"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "32 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA RTX 4070 12GB / RX 7800 XT"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "85 GB NVMe SSD"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Abyssal Echoes: Zero",
+      "developer": "Nexus Interactive",
+      "releaseDate": "2024-09-20",
+      "price": 240000,
+      "originalPrice": 480000,
+      "genres": ["Phiêu lưu", "Thế giới mở"],
+      "platforms": ["Windows PC", "macOS"],
+      "features": ["Chơi đơn", "Co-op"],
+      "rating": 4.9,
+      "reviewCount": 3810,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuBrM6VoxDU4go6LJ5PBKzAYYUQtd_hjXfCebST1ooTcgO9zZ9yB5GFjadhy1GmPc5AAQuyxCxC9SUS6iLTDO1I5Qoks_rTeVMy93Fpz4jurvCJh_y9MtuxI-MSJv4WXeHU2uk72uJXyeT6aZy02AWxUsoZYp5nVUjziD3WfxgBo72t7AozMM-8gDrPos2P3E5rCRc7yYBTaHS9dki1D6F4_7aTf5ajzdwZiYZ00YBI",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuBrM6VoxDU4go6LJ5PBKzAYYUQtd_hjXfCebST1ooTcgO9zZ9yB5GFjadhy1GmPc5AAQuyxCxC9SUS6iLTDO1I5Qoks_rTeVMy93Fpz4jurvCJh_y9MtuxI-MSJv4WXeHU2uk72uJXyeT6aZy02AWxUsoZYp5nVUjziD3WfxgBo72t7AozMM-8gDrPos2P3E5rCRc7yYBTaHS9dki1D6F4_7aTf5ajzdwZiYZ00YBI"],
+      "description": "Khám phá những ngôi đền cổ và bí mật dưới lòng đất.",
+      "requirements": {
+        "minimum": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 10 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i5-7600 / AMD Ryzen 5 1600"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "8 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA GTX 1050 Ti / RX 570"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "50 GB SSD"
+          }
+        ],
+        "recommended": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 11 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i7-10700 / AMD Ryzen 7 5700X"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "16 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA RTX 3060 / RX 6600 XT"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "50 GB SSD"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Vanguard: Ironclad",
+      "developer": "Titan Forge",
+      "releaseDate": "2024-06-11",
+      "price": 360000,
+      "originalPrice": 450000,
+      "genres": ["Bắn súng", "Hành động"],
+      "platforms": ["Windows PC", "Steam Deck"],
+      "features": ["Co-op", "Đấu mạng trực tuyến"],
+      "rating": 4.6,
+      "reviewCount": 920,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCND_xfxMThn5inRqRLEr0aSKl0csKyiqbPkfumTeZUbgH_3qYHXkPEFwTgbB3cQvRtFj5C0AXr3Ya0_yb_wwNGKJY6SSLyuagMTSvY2BGdVIpIFNIHxdBmYWgmIHO44h8Fcsq4PluBJ0sIuFQ73beCW25joB8eKyn5-TqBt8mrrxUgtTLwqBKoqLvD3H4tF9xJ682IxYYhPJXmbakfb1RsP8dnRSBOf9iyHB3IhG4",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuCND_xfxMThn5inRqRLEr0aSKl0csKyiqbPkfumTeZUbgH_3qYHXkPEFwTgbB3cQvRtFj5C0AXr3Ya0_yb_wwNGKJY6SSLyuagMTSvY2BGdVIpIFNIHxdBmYWgmIHO44h8Fcsq4PluBJ0sIuFQ73beCW25joB8eKyn5-TqBt8mrrxUgtTLwqBKoqLvD3H4tF9xJ682IxYYhPJXmbakfb1RsP8dnRSBOf9iyHB3IhG4", "https://lh3.googleusercontent.com/aida-public/AB6AXuAZi8NBJIXs-wxk7FUzMzD-rRE1X3exM5lf7ed27QjggsIHRuDHXwlm-1cDXTvZhJBT7Boi-aImybMK8E892D3MJwgzarGJ0CgPx3ZD5x3Ol86gUMiCwDMYGdPDeIjWJe30z7upAXsVmhDoihyukaG-PJrbK3e_kn8_RTOnGl5BuYaipS_u34XC2gVAkbkpYr_LZ6W_XsOeIFehbqLsBGAKPO1s27e01J5oKkK4cRU"],
+      "description": "Điều khiển cỗ máy chiến đấu hạng nặng giữa vùng công nghiệp hoang tàn.",
+      "requirements": {
+        "minimum": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 10 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i5-9600K / AMD Ryzen 5 3600"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "12 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA GTX 1660 / RX 5600 XT"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "70 GB SSD"
+          }
+        ],
+        "recommended": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 11 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i7-12700 / AMD Ryzen 7 5800X3D"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "16 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA RTX 3070 / RX 6800"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "70 GB NVMe SSD"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Orbital Fleet Command",
+      "developer": "Starline Studio",
+      "releaseDate": "2023-11-02",
+      "price": 390000,
+      "originalPrice": 390000,
+      "genres": ["Chiến thuật", "Không gian"],
+      "platforms": ["Windows PC", "macOS"],
+      "features": ["Chơi đơn"],
+      "rating": 4.7,
+      "reviewCount": 640,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCoPp4zRJ350ney9sucodmdjp6Qr4gOcZVv1f_62vKkOILR86HNnbwNJWlxeZ060GL-M37ozcFvZWxYwNdhJvhJHsGonw27I64ZScBnoLWTWH-rU6gahuXW40ESN1rAKicOWK8SD7nvm-MC96E-vlEm4FaNgtDVjOg42eiyo-kqtntBCtViOvQrTr1uK8K4jNJkD9gcbIcHJodKeHnofGL3n740Rl9Iyu_n5VYSbbg",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuCoPp4zRJ350ney9sucodmdjp6Qr4gOcZVv1f_62vKkOILR86HNnbwNJWlxeZ060GL-M37ozcFvZWxYwNdhJvhJHsGonw27I64ZScBnoLWTWH-rU6gahuXW40ESN1rAKicOWK8SD7nvm-MC96E-vlEm4FaNgtDVjOg42eiyo-kqtntBCtViOvQrTr1uK8K4jNJkD9gcbIcHJodKeHnofGL3n740Rl9Iyu_n5VYSbbg"],
+      "description": "Xây dựng và chỉ huy hạm đội phòng thủ trên quỹ đạo."
+    },
+    {
+      "id": 5,
+      "title": "Requiem of Hollows",
+      "developer": "Grim Lantern",
+      "releaseDate": "2024-03-28",
+      "price": 330000,
+      "originalPrice": 550000,
+      "genres": ["Soulslike", "Kinh dị"],
+      "platforms": ["Windows PC", "Steam Deck"],
+      "features": ["Chơi đơn"],
+      "rating": 4.9,
+      "reviewCount": 5290,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuD5iw38FGdi5oNffffbiCnM7veJZf8pkn4VUkNnbIDSPWgPyAVIaWXxUf3je5sUmAh-j9CDjNAI-qQAZ2UaYp8QSe6TKZMzKU0gFwWevEN8pr7jLWufj1VauOlVfhaIQnzhZHzI9TlTiVPNfa65zUZ2PxBCaTZzrEfXAozNdGtd5LrNfXklAzUgD-jsnUsK-dZ7PDRgE9FZneEViAqOuMwAGjzPFqnY2gReB2cNRrI",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuD5iw38FGdi5oNffffbiCnM7veJZf8pkn4VUkNnbIDSPWgPyAVIaWXxUf3je5sUmAh-j9CDjNAI-qQAZ2UaYp8QSe6TKZMzKU0gFwWevEN8pr7jLWufj1VauOlVfhaIQnzhZHzI9TlTiVPNfa65zUZ2PxBCaTZzrEfXAozNdGtd5LrNfXklAzUgD-jsnUsK-dZ7PDRgE9FZneEViAqOuMwAGjzPFqnY2gReB2cNRrI", "https://lh3.googleusercontent.com/aida-public/AB6AXuAklH-0E1biTKoo4FC0ekXW3N22CuZh5A47rl6fze3pjniqWIP8OlmWW0fRQCTS8tcy5bmOUlMq_QFu4V5RrzOgucPMsAM6FX6iaODSU3Y-c3k_f2L-OCZL06nHHGgJq34rSYeoI0UstMQzGUFZ3-HST5HeH20sv5o_TZKJOkc0UpYOXyHacjEPERaAwaVh5bmbFNwqPAhUWRFUZPOKbvXE4lRV3Js31VdGYGULGec"],
+      "description": "Một kiếm sĩ đơn độc đối đầu những thực thể bóng tối trong tàn tích cổ.",
+      "requirements": {
+        "minimum": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 10 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i5-8600 / AMD Ryzen 5 3600"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "12 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA GTX 1070 / RX 590"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "60 GB SSD"
+          }
+        ],
+        "recommended": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 11 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i7-11700 / AMD Ryzen 7 5800X"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "16 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA RTX 3060 Ti / RX 6700 XT"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "60 GB SSD"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "title": "Apex: Velocity",
+      "developer": "Redline Games",
+      "releaseDate": "2024-08-05",
+      "price": 290000,
+      "originalPrice": 290000,
+      "genres": ["Đua xe", "Thể thao"],
+      "platforms": ["Windows PC", "Steam Deck"],
+      "features": ["Chơi đơn", "Đấu mạng trực tuyến"],
+      "rating": 4.5,
+      "reviewCount": 780,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCBw8R5VvtjWQL4r5zRrmuA50kp3R2_px4jhwNCxTD884Kn-EONyTshxaHImCes14WFkFg4NZC6sVbyCLU3nJtcW-iIv4N685w_bQ5SRSbrNwHCkH02V8HEwL8LFhZXUqb8BW42scaAZBNrLD1OwXNfy5j0TqMMf5uZYjQAFe6l1-XFdzdJBFuHUsMR9liWAEhjb5vBlH75dYxwgs8SgE5z4xds9M03neo7wXziRQk",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuCBw8R5VvtjWQL4r5zRrmuA50kp3R2_px4jhwNCxTD884Kn-EONyTshxaHImCes14WFkFg4NZC6sVbyCLU3nJtcW-iIv4N685w_bQ5SRSbrNwHCkH02V8HEwL8LFhZXUqb8BW42scaAZBNrLD1OwXNfy5j0TqMMf5uZYjQAFe6l1-XFdzdJBFuHUsMR9liWAEhjb5vBlH75dYxwgs8SgE5z4xds9M03neo7wXziRQk", "https://lh3.googleusercontent.com/aida-public/AB6AXuC8tzznVwWIgCh77XEmAO3TJXXeVdCLp23fFf7WcQeLHD25zlna44aokOgSHUSa3sff12le81T-F8_sQViLHDLvf4KffvnkNqaTwdIZGMxP6O2sbzl-4hqJRBlqhv6iMl5SMQMbPTcWYkakHXcTbq2JaexGZHwW-IktMBLK6HwrkV0QXOm_z6BNaj8wK8Vt0uNa6uM0r0e_UDIRcZ0r5ql1f_qeDvn_cNuOn5BTEXQ"],
+      "description": "Đua tốc độ cao xuyên qua thành phố tương lai trong đêm mưa."
+    },
+    {
+      "id": 7,
+      "title": "Sector 9: Infiltration",
+      "developer": "Blackout Tactical",
+      "releaseDate": "2024-01-19",
+      "price": 297500,
+      "originalPrice": 350000,
+      "genres": ["FPS", "Bắn súng"],
+      "platforms": ["Windows PC"],
+      "features": ["Co-op", "Đấu mạng trực tuyến"],
+      "rating": 4.4,
+      "reviewCount": 2110,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuBwDrR0EsVc5IVIh5md7-eKMFWmvtuXqfW7nk-5WcLrIO_D5xcjpoM219taniG7NE9Pi4LRyK6R0jH28T-60FOOz0mp-ookMKyaWME1rSnl8ko1ouPq5jcnSsGqbiRdNp8EoP9K2HSwfC8qrpz3X3CvrPY0oHhXtrQCUsCIKq-x3b3W_TKCosu57Bw4CfYcmhhxkXeLecHHDXVoQ7uJDKhyTzuF7E2ZXZHeeYgT_y8",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuBwDrR0EsVc5IVIh5md7-eKMFWmvtuXqfW7nk-5WcLrIO_D5xcjpoM219taniG7NE9Pi4LRyK6R0jH28T-60FOOz0mp-ookMKyaWME1rSnl8ko1ouPq5jcnSsGqbiRdNp8EoP9K2HSwfC8qrpz3X3CvrPY0oHhXtrQCUsCIKq-x3b3W_TKCosu57Bw4CfYcmhhxkXeLecHHDXVoQ7uJDKhyTzuF7E2ZXZHeeYgT_y8", "https://lh3.googleusercontent.com/aida-public/AB6AXuCHJ0Zj0Cxqdqhxu3dd_JZnEqOOOkk_UHcvkIFi0sPu-cpa_fXhemrnVSjm-uah7s-iHMmwuEkUWJUV3LZGSswG8YJ7ZteOw8p1Z_Ree1s61J3orUHjqzDNvNDj2Upz6dExyak_JcXSy-0RAwnQ-FlRYix9zQy7zyARb7PgJyWdKfbKUl9aL4SA7SLvzOianCWBGMvNs2yXeC1X-XT4q6ttbVrgriHbDy8S7pf1CHw"],
+      "description": "Biệt đội đột kích căn cứ máy chủ được canh gác nghiêm ngặt.",
+      "requirements": {
+        "minimum": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 10 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i3-10100 / AMD Ryzen 3 3300X"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "8 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA GTX 1650 / RX 5500 XT"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "40 GB"
+          }
+        ],
+        "recommended": [
+          {
+            "label": "Hệ điều hành",
+            "value": "Windows 11 64-bit"
+          },
+          {
+            "label": "Bộ vi xử lý",
+            "value": "Intel Core i5-12400 / AMD Ryzen 5 5600X"
+          },
+          {
+            "label": "Bộ nhớ",
+            "value": "16 GB RAM"
+          },
+          {
+            "label": "Đồ họa",
+            "value": "NVIDIA RTX 3060 / RX 6600"
+          },
+          {
+            "label": "Dung lượng",
+            "value": "40 GB SSD"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "title": "Stasis Event: Protocol",
+      "developer": "Void Signal",
+      "releaseDate": "2024-07-30",
+      "price": 200000,
+      "originalPrice": 500000,
+      "genres": ["Kinh dị", "Sinh tồn"],
+      "platforms": ["Windows PC", "macOS"],
+      "features": ["Chơi đơn"],
+      "rating": 4.8,
+      "reviewCount": 4050,
+      "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4z2CgI3vvoNgE9OfPCszhWXPrMLavkb4P-5aA_op3mMNQEpRa15vCmLFv_8gQYankvy5I07OPRt9iroVPiWaQ0UHINJcXBnEX9tIoZqhUOUEMaJO5kdjcjIAlYSXkHVHJ_G3ZQ2groJfF83fq-K2SG9ntgN-s3yhEe3BZkfQ30vo6LUomeN96-adM6vbRqUVvVnGTp9_NdnnMTQPuZFTOBz9CERf3mKwG_fnhuw",
+      "screenshots": ["https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4z2CgI3vvoNgE9OfPCszhWXPrMLavkb4P-5aA_op3mMNQEpRa15vCmLFv_8gQYankvy5I07OPRt9iroVPiWaQ0UHINJcXBnEX9tIoZqhUOUEMaJO5kdjcjIAlYSXkHVHJ_G3ZQ2groJfF83fq-K2SG9ntgN-s3yhEe3BZkfQ30vo6LUomeN96-adM6vbRqUVvVnGTp9_NdnnMTQPuZFTOBz9CERf3mKwG_fnhuw"],
+      "description": "Sinh tồn trên con tàu nghiên cứu trôi dạt giữa vành đai tiểu hành tinh."
+    }
+  ],
   "categories": [],
   "orders": [],
   "reviews": []

@@ -1,0 +1,185 @@
+@use '../../../styles/variables' as *;
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  background-color: $color-surface-container;
+  border: 1px solid $color-outline-variant;
+  border-radius: 0.5rem;
+
+  @media (min-width: 640px) {
+    padding: 2.5rem;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  background-color: $color-surface-container-high;
+  border: 1px solid $color-outline-variant;
+  border-radius: 0.5rem;
+  color: $color-primary-container;
+}
+
+.title {
+  margin: 0;
+  color: $color-on-surface;
+  font-family: $font-display;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: $color-on-surface-variant;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem;
+  background-color: $color-surface-container-lowest;
+  border: 1px solid $color-outline-variant;
+  border-radius: 0.5rem;
+}
+
+.tab {
+  padding: 0.5rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  color: $color-on-surface-variant;
+  font-family: $font-display;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  cursor: pointer;
+  transition: color 150ms ease, background-color 150ms ease;
+
+  &:hover {
+    color: $color-on-surface;
+  }
+}
+
+.tabActive {
+  background-color: $color-surface-container;
+  border-color: $color-outline-variant;
+  color: $color-primary-container;
+
+  &:hover {
+    color: $color-primary-container;
+  }
+}
+
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    border-top: 1px solid $color-outline-variant;
+  }
+}
+
+.dividerLabel {
+  position: relative;
+  padding: 0 0.75rem;
+  background-color: $color-surface-container;
+  color: $color-outline;
+  font-family: $font-display;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.providers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.providerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 0.5rem;
+  background-color: $color-surface-container-low;
+  border: 1px solid $color-outline-variant;
+  border-radius: 0.5rem;
+  color: $color-on-surface;
+  font-family: $font-display;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+
+  &:hover:not(:disabled) {
+    background-color: $color-surface-container-high;
+    border-color: $color-outline;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.99);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 380px) {
+    span {
+      display: none;
+    }
+  }
+}
+
+.terms {
+  margin: 1.5rem 0 0;
+  color: $color-outline;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.termsLink {
+  color: $color-on-surface-variant;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: $color-on-surface;
+  }
+}
