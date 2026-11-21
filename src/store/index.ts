@@ -3,13 +3,6 @@ import cartReducer from "../features/cart/slices/cartSlice";
 import profileReducer from "../features/profile/slices/profileSlice";
 import {setStorage} from "../services/storage";
 import {CART_STORAGE_KEY, PROFILE_STORAGE_KEY} from "../utils/constants";
-
-export const store = configureStore({
-    reducer: {
-        // auth: ,
-        cart: cartReducer,
-        profile: profileReducer,
-        // wishlist:
 import {gameApi} from "../features/games/api/gameApi.ts";
 import wishlistReducer from "../features/wishlist/slices/wishlistSlice.ts";
 import authReducer from "../features/auth/slices/authSlice";
@@ -18,6 +11,8 @@ export const store = configureStore({
     reducer: {
         auth: authReducer,
         [gameApi.reducerPath]: gameApi.reducer,
+        cart: cartReducer,
+        profile: profileReducer,
         wishlist: wishlistReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(gameApi.middleware),
