@@ -1,0 +1,147 @@
+@use "../styles/variables" as *;
+
+:global(body) {
+  margin: 0;
+  background-color: $background;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $background;
+  color: $on-surface;
+  font-family: $font-body;
+  -webkit-font-smoothing: antialiased;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid $outline-variant;
+  background-color: rgba($background, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    padding: 0 24px;
+  }
+}
+
+.headerGroup {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: $font-display;
+  font-size: 22px;
+  font-weight: 700;
+  color: $primary-container;
+  text-decoration: none;
+}
+
+.brandMark {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background-color: $primary-container;
+}
+
+.nav {
+  display: none;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.navLink {
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  color: $on-surface-variant;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $on-surface;
+  }
+}
+
+.navLinkActive {
+  border-bottom-color: $primary-container;
+  color: $primary-container;
+}
+
+.cartLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: $on-surface-variant;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background-color: $surface-container-high;
+    color: $on-surface;
+  }
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background-color: $primary-container;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: $on-primary-fixed;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  padding: 24px 16px;
+  border-top: 1px solid $outline-variant;
+  background-color: $surface-container-lowest;
+  font-size: 13px;
+  color: $on-surface-variant;
+}

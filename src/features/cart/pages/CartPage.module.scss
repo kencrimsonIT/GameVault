@@ -1,0 +1,106 @@
+@use "../../../styles/variables" as *;
+
+.page {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+
+  @media (min-width: 768px) {
+    padding: 48px 24px 80px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-family: $font-display;
+  font-size: 28px;
+  font-weight: 700;
+  color: $on-surface;
+}
+
+.clearButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid $outline-variant;
+  border-radius: 8px;
+  background: transparent;
+  font-family: $font-body;
+  font-size: 14px;
+  color: $on-surface-variant;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    border-color: $error;
+    color: $error;
+  }
+}
+
+.layout {
+  display: grid;
+  gap: 24px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 96px 16px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: $outline-variant;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-family: $font-display;
+  font-size: 26px;
+  color: $on-surface;
+}
+
+.emptyText {
+  margin: 0 0 12px;
+  color: $on-surface-variant;
+}
+
+.emptyButton {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: $primary-container;
+  font-family: $font-display;
+  font-weight: 700;
+  color: $on-primary-fixed;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,64 @@
+@use "../../../styles/variables" as *;
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  background-color: $surface-container;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-family: $font-display;
+  font-size: 20px;
+  font-weight: 600;
+  color: $on-surface;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+  color: $on-surface-variant;
+}
+
+.savings {
+  color: $primary-container;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: 1px solid $outline-variant;
+  color: $on-surface;
+}
+
+.total {
+  font-family: $font-display;
+  font-size: 26px;
+}
+
+.checkoutButton {
+  height: 48px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 8px;
+  background-color: $primary-container;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 700;
+  color: $on-primary-fixed;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
