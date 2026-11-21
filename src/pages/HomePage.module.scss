@@ -1,0 +1,850 @@
+@use "../styles/variables" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+  color: $on-surface;
+  font-family: $font-body;
+
+  @media (min-width: 1024px) {
+    padding: 40px 24px 64px;
+  }
+}
+
+.status {
+  padding: 64px 0;
+  color: $on-surface-variant;
+  text-align: center;
+}
+
+/* ---------- Section headers ---------- */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $outline-variant;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.sectionDesc {
+  margin: 4px 0 0;
+  color: $on-surface-variant;
+  font-size: 13px;
+}
+
+.sectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: $primary-container;
+  font-family: $font-display;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $surface-container;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}
+
+.heroMedia {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid $outline-variant;
+  background-color: $surface-container-lowest;
+
+  @media (min-width: 1024px) {
+    border-right: 1px solid $outline-variant;
+    border-bottom: 0;
+  }
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+.heroBadges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.badgeNew {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  background-color: $surface-container-lowest;
+  color: $primary-container;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $primary-container;
+}
+
+.badgeDiscount {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: $primary-container;
+  color: $on-primary-fixed;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.heroPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  background-color: $surface-container;
+
+  @media (min-width: 1024px) {
+    padding: 32px;
+  }
+}
+
+.heroTop {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  color: $on-surface-variant;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.heroTitle {
+  margin: 0;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: clamp(28px, 3.6vw, 40px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heroDesc {
+  margin: 0;
+  color: $on-surface-variant;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.specBox {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid $outline-variant;
+  border-radius: 8px;
+  background-color: $surface-container-low;
+}
+
+.specLabel {
+  display: block;
+  margin-bottom: 2px;
+  color: $outline;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.specValue {
+  color: $on-surface;
+  font-size: 13px;
+}
+
+.specAccent {
+  color: $primary-container;
+  font-weight: 600;
+}
+
+.heroFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid $outline-variant;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.heroPrice {
+  color: $primary-container;
+  font-family: $font-display;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.oldPrice {
+  display: block;
+  color: $outline;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.heroActions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-family: $font-display;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.primaryButton {
+  background-color: $primary-container;
+  color: $surface-container-lowest;
+
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+.secondaryButton {
+  border-color: $outline-variant;
+  background-color: $surface-container-high;
+  color: $on-surface;
+
+  &:hover {
+    background-color: $surface-container-highest;
+  }
+}
+
+.wishlistActive {
+  border-color: $primary-container;
+  color: $primary-container;
+}
+
+/* ---------- Trending cards ---------- */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $surface-container;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    border-color: $primary-container;
+    background-color: $surface-container-high;
+  }
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid $outline-variant;
+  background-color: $surface-container-lowest;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cardImage {
+  transition: transform 0.3s;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.03);
+}
+
+.cardDiscount {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: $primary-container;
+  color: $on-primary-fixed;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.cardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.cardTag {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  background-color: $surface-container-low;
+  color: $outline;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+
+  a {
+    color: $on-surface;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-container;
+    }
+  }
+}
+
+.cardDesc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  color: $on-surface-variant;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 12px 16px;
+  border-top: 1px solid $outline-variant;
+}
+
+.cardPrice {
+  display: block;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardPriceSale {
+  color: $primary-container;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  background-color: $surface-container-low;
+  color: $on-surface;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    border-color: $primary-container;
+    color: $primary-container;
+  }
+}
+
+/* ---------- Deals ---------- */
+
+.dealHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dealMark {
+  width: 10px;
+  height: 10px;
+  background-color: $primary-container;
+}
+
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  background-color: $surface-container;
+  color: $outline;
+  font-size: 12px;
+}
+
+.timerIcon {
+  color: $primary-container;
+}
+
+.timerValue {
+  color: $primary-container;
+  font-family: $font-display;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.dealGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dealCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $surface-container;
+
+  &:hover {
+    border-color: $primary-container;
+  }
+}
+
+.dealMedia {
+  position: relative;
+  height: 176px;
+  overflow: hidden;
+  border-bottom: 1px solid $outline-variant;
+  background-color: $surface-container-lowest;
+}
+
+.dealImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dealBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: $primary-container;
+  color: $surface-container-lowest;
+  font-family: $font-display;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dealBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.dealEyebrow {
+  color: $outline;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.dealTitle {
+  margin: 4px 0 0;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dealFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid $outline-variant;
+}
+
+.dealPrice {
+  display: block;
+  color: $primary-container;
+  font-family: $font-display;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dealButton {
+  padding: 8px 12px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  background-color: $surface-container-high;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background-color: $surface-container-highest;
+    color: $primary-container;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+/* ---------- Categories ---------- */
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  background-color: $surface-container-low;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $primary-container;
+
+    .categoryIcon,
+    .categoryName {
+      color: $primary-container;
+    }
+  }
+}
+
+.categoryIcon {
+  color: $outline;
+  transition: color 0.2s;
+}
+
+.categoryName {
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.categoryCount {
+  color: $outline;
+  font-size: 12px;
+}
+
+/* ---------- New releases ---------- */
+
+.releaseList {
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $surface-container;
+}
+
+.releaseRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  transition: background-color 0.2s;
+
+  & + & {
+    border-top: 1px solid $outline-variant;
+  }
+
+  &:hover {
+    background-color: $surface-container-high;
+  }
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.releaseInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.releaseThumb {
+  flex-shrink: 0;
+  width: 64px;
+  height: 48px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: $surface-container-lowest;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.releaseTitle {
+  margin: 0;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.releaseMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 0;
+  color: $on-surface-variant;
+  font-size: 12px;
+}
+
+.releaseActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+
+  @media (min-width: 640px) {
+    justify-content: flex-end;
+    width: auto;
+  }
+}
+
+.platformIcon {
+  color: $outline;
+}
+
+.releasePrice {
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.releaseButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid $outline-variant;
+  border-radius: 4px;
+  background-color: $surface-container-low;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    border-color: $primary-container;
+    color: $primary-container;
+  }
+}
+
+/* ---------- Trust banner ---------- */
+
+.trustBanner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  background-color: $surface-container-low;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.trustItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.trustIcon {
+  flex-shrink: 0;
+  color: $primary-container;
+}
+
+.trustTitle {
+  margin: 0;
+  color: $on-surface;
+  font-family: $font-display;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.trustDesc {
+  margin: 4px 0 0;
+  color: $on-surface-variant;
+  font-size: 12px;
+  line-height: 1.6;
+}
