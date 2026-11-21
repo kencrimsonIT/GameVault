@@ -2,6 +2,7 @@ import {Link, useParams} from "react-router-dom";
 import {Heart, ShoppingCart, Star} from "lucide-react";
 import {useGetGameByIdQuery} from "../api/gameApi.ts";
 import GameGallery from "../components/GameGallery.tsx";
+import GameRequirements from "../components/GameRequirements.tsx";
 import {formatCurrency} from "../../../utils/formatCurrency.ts";
 import {formatDate} from "../../../utils/formatDate.ts";
 import {useAppDispatch, useAppSelector} from "../../../store/hooks.ts";
@@ -116,6 +117,7 @@ export default function GameDetailPage() {
                     <h2 className={styles.sectionTitle}>Giới thiệu</h2>
                     <p className={styles.description}>{game.description}</p>
                 </section>
+                <GameRequirements requirements={game.requirements}/>
             </div>
         </main>
     )
