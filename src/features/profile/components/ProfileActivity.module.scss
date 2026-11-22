@@ -1,0 +1,65 @@
+@use "../../../styles/variables" as *;
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid $outline-variant;
+  border-radius: 12px;
+  background-color: $surface-container;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-family: $font-display;
+  font-size: 20px;
+  font-weight: 600;
+  color: $on-surface;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: $surface-container-low;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: $primary-container;
+}
+
+.label {
+  margin: 0 0 2px;
+  font-size: 13px;
+  color: $on-surface-variant;
+}
+
+.value {
+  font-family: $font-display;
+  font-size: 20px;
+  color: $on-surface;
+}
+
+.link {
+  margin-top: 4px;
+  padding: 12px;
+  border: 1px solid $primary-container;
+  border-radius: 8px;
+  font-family: $font-display;
+  font-weight: 600;
+  text-align: center;
+  color: $primary-container;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background-color: $primary-container;
+    color: $on-primary-fixed;
+  }
+}
