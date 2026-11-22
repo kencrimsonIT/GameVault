@@ -1,6 +1,6 @@
 import { CalendarDays, Mail } from "lucide-react";
 import { formatDate } from "../../../utils/formatDate";
-import styles from "./ProfileHeader.module.scss";
+import styles from "./ProfileActivity.module.scss";
 
 type Props = {
   displayName: string;
