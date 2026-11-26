@@ -3,6 +3,7 @@ import {Heart, ShoppingCart, Star} from "lucide-react";
 import {useGetGameByIdQuery} from "../api/gameApi.ts";
 import GameGallery from "../components/GameGallery.tsx";
 import GameRequirements from "../components/GameRequirements.tsx";
+import RelatedGames from "../components/RelatedGames.tsx";
 import {formatCurrency} from "../../../utils/formatCurrency.ts";
 import {formatDate} from "../../../utils/formatDate.ts";
 import {useAppDispatch, useAppSelector} from "../../../store/hooks.ts";
@@ -118,6 +119,7 @@ export default function GameDetailPage() {
                     <p className={styles.description}>{game.description}</p>
                 </section>
                 <GameRequirements requirements={game.requirements}/>
+                <RelatedGames game={game}/>
             </div>
         </main>
     )
