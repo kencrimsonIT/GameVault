@@ -1,0 +1,93 @@
+@use '../../../styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: rgba(147, 0, 10, 0.2);
+  border: 1px solid $color-error-container;
+  border-radius: 0.5rem;
+  color: $color-error;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.alertIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.providers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.providerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 0.5rem;
+  background-color: $color-surface-container-low;
+  border: 1px solid $color-outline-variant;
+  border-radius: 0.5rem;
+  color: $color-on-surface;
+  font-family: $font-display;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+
+  &:hover:not(:disabled) {
+    background-color: $color-surface-container-high;
+    border-color: $color-outline;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.99);
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-primary-container;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
+
+  @media (max-width: 380px) {
+    span {
+      display: none;
+    }
+  }
+}
+
+.providerIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.spinner {
+  flex-shrink: 0;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
