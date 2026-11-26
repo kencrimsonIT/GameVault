@@ -1,5 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom'
 import AuthPage from '../features/auth/pages/AuthPage'
+import AuthCallbackPage from '../features/auth/pages/AuthCallbackPage'
 import ForgotPasswordPage from '../features/auth/pages/ForgotPasswordPage'
 import RequireAuth from '../features/auth/components/RequireAuth'
 import AuthLayout from '../layouts/AuthLayout'
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: '/auth',
                 element: <AuthPage/>,
+            },
+            {
+                path: '/auth/callback',
+                element: <AuthCallbackPage/>,
             },
             {
                 path: '/auth/forgot-password',

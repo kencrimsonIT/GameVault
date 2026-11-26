@@ -1,9 +1,10 @@
-import {Gamepad2, Globe, MessageSquare, Gamepad} from 'lucide-react'
+import {Gamepad2} from 'lucide-react'
 import {useState} from 'react'
 import {Navigate, useLocation} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from '../../../store/hooks'
 import LoginForm from '../components/LoginForm'
 import RegisterForm from '../components/RegisterForm'
+import SocialAuthButtons from '../components/SocialAuthButtons'
 import {clearAuthError, selectIsAuthenticated} from '../slices/authSlice'
 import styles from './AuthPage.module.scss'
 
@@ -89,35 +90,7 @@ const AuthPage = () => {
                 <span className={styles.dividerLabel}>Hoặc tiếp tục với</span>
             </div>
 
-            <div className={styles.providers}>
-                <button
-                    className={styles.providerButton}
-                    type="button"
-                    disabled
-                    title="Đăng nhập bằng Steam sắp ra mắt"
-                >
-                    <Gamepad size={20} aria-hidden="true"/>
-                    <span>Steam</span>
-                </button>
-                <button
-                    className={styles.providerButton}
-                    type="button"
-                    disabled
-                    title="Đăng nhập bằng Discord sắp ra mắt"
-                >
-                    <MessageSquare size={20} aria-hidden="true"/>
-                    <span>Discord</span>
-                </button>
-                <button
-                    className={styles.providerButton}
-                    type="button"
-                    disabled
-                    title="Đăng nhập bằng Google sắp ra mắt"
-                >
-                    <Globe size={20} aria-hidden="true"/>
-                    <span>Google</span>
-                </button>
-            </div>
+            <SocialAuthButtons redirectPath={from}/>
 
             <p className={styles.terms}>
                 Bằng việc tiếp tục, bạn đồng ý với{' '}

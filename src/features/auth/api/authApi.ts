@@ -5,6 +5,7 @@ import type {
     LoginCredentials,
     PasswordRecoveryRequest,
     RegisterPayload,
+    SocialAuthProfile,
     User,
     UserRecord,
 } from '../types/auth.types'
@@ -123,6 +124,83 @@ export const authApi = {
 
         return {
             token: createToken(),
+            user: toUser(createdUser),
+        }
+    },
+
+    async loginWithSocial(profile: SocialAuthProfile): Promise<AuthSession> {
+        const email = normalizeEmail(profile.email)
+
+        if (!email) {
+            throw new AuthApiError(
+                'Tài khoản mạng xã hội không chia sẻ địa chỉ email. Vui lòng cấp quyền email và thử lại.',
+            )
+        }
+
+        const existingUser = await findUserByEmail(email)
+        const now = new Date().toISOString()
+
+        if (existingUser) {
+            if (existingUser.status === 'suspended') {
+                throw new AuthApiError('Tài khoản của bạn đã bị tạm khóa')
+            }
+
+            const authProviders = existingUser.authProviders.includes(profile.provider)
+                ? existingUser.authProviders
+                : [...existingUser.authProviders, profile.provider]
+
+            const { data: updatedUser } = await axiosInstance.put<UserRecord>(
+                `/users/${existingUser.id}`,
+                {
+                    ...existingUser,
+                    authProviders,
+                    avatar: existingUser.avatar || profile.avatar,
+                    isVerified: existingUser.isVerified || profile.emailVerified,
+                    updatedAt: now,
+                },
+            )
+
+            return {
+                token: profile.accessToken,
+                user: toUser(updatedUser),
+            }
+        }
+
+        const { data: users } = await axiosInstance.get<UserRecord[]>('/users')
+        const nextId = users.reduce((maxId, user) => Math.max(maxId, user.id), 0) + 1
+
+        const newUser: UserRecord = {
+            id: nextId,
+            userCode: createUserCode(),
+            fullName: profile.fullName,
+            displayName: profile.fullName,
+            gamertag: `${createGamertag(profile.fullName, email)}_${nextId}`,
+            gamertagVerified: false,
+            email,
+            // Social accounts have no local password, so email login stays unavailable.
+            password: '',
+            phone: '',
+            avatar: profile.avatar,
+            country: 'VN',
+            currency: 'VND',
+            role: 'user',
+            rank: 'ROOKIE',
+            isVerified: profile.emailVerified,
+            walletBalance: 0,
+            rewardPoints: 0,
+            ownedKeysCount: 0,
+            wishlist: [],
+            authProviders: [profile.provider],
+            lastLoginIp: '',
+            status: 'active',
+            createdAt: now,
+            updatedAt: now,
+        }
+
+        const { data: createdUser } = await axiosInstance.post<UserRecord>('/users', newUser)
+
+        return {
+            token: profile.accessToken,
             user: toUser(createdUser),
         }
     },

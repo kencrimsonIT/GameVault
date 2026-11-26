@@ -119,52 +119,6 @@
   text-transform: uppercase;
 }
 
-.providers {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-
-.providerButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  height: 44px;
-  padding: 0 0.5rem;
-  background-color: $color-surface-container-low;
-  border: 1px solid $color-outline-variant;
-  border-radius: 0.5rem;
-  color: $color-on-surface;
-  font-family: $font-display;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease;
-
-  &:hover:not(:disabled) {
-    background-color: $color-surface-container-high;
-    border-color: $color-outline;
-  }
-
-  &:active:not(:disabled) {
-    transform: scale(0.99);
-  }
-
-  &:disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 380px) {
-    span {
-      display: none;
-    }
-  }
-}
-
 .terms {
   margin: 1.5rem 0 0;
   color: $color-outline;

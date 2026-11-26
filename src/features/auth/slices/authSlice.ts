@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { authStorage } from '../../../services/storage'
 import { authApi, getAuthErrorMessage } from '../api/authApi'
+import {
+    completeSocialAuth,
+    getSocialAuthErrorMessage,
+    signOutOfSocialAuth,
+} from '../api/socialAuth'
 import type {
     AuthSession,
     LoginCredentials,
@@ -56,8 +61,25 @@ export const register = createAsyncThunk<AuthSession, RegisterPayload, { rejectV
     },
 )
 
+export const loginWithSocial = createAsyncThunk<
+    AuthSession,
+    void,
+    { rejectValue: string }
+>('auth/loginWithSocial', async (_payload, { rejectWithValue }) => {
+    try {
+        const authSession = await completeSocialAuth()
+
+        authStorage.save(authSession, true)
+
+        return authSession
+    } catch (error) {
+        return rejectWithValue(getSocialAuthErrorMessage(error))
+    }
+})
+
 export const logout = createAsyncThunk('auth/logout', async () => {
     authStorage.clear()
+    await signOutOfSocialAuth()
 })
 
 const authSlice = createSlice({
@@ -95,6 +117,20 @@ const authSlice = createSlice({
             .addCase(register.rejected, (state, action) => {
                 state.status = 'failed'
                 state.error = action.payload ?? 'Không thể tạo tài khoản. Vui lòng thử lại.'
+            })
+            .addCase(loginWithSocial.pending, (state) => {
+                state.status = 'loading'
+                state.error = null
+            })
+            .addCase(loginWithSocial.fulfilled, (state, action) => {
+                state.status = 'succeeded'
+                state.user = action.payload.user
+                state.token = action.payload.token
+            })
+            .addCase(loginWithSocial.rejected, (state, action) => {
+                state.status = 'failed'
+                state.error =
+                    action.payload ?? 'Không thể đăng nhập bằng mạng xã hội. Vui lòng thử lại.'
             })
             .addCase(logout.fulfilled, (state) => {
                 state.user = null
