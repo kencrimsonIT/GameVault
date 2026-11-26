@@ -1,4 +1,5 @@
 import {Link, useParams} from "react-router-dom";
+import {useEffect} from "react";
 import {Heart, ShoppingCart, Star} from "lucide-react";
 import {useGetGameByIdQuery} from "../api/gameApi.ts";
 import GameGallery from "../components/GameGallery.tsx";
@@ -18,7 +19,9 @@ export default function GameDetailPage() {
     const {data: game, isLoading, error} = useGetGameByIdQuery(gameId, {skip: !isValidId})
     const dispatch = useAppDispatch()
     const isWishlisted = useAppSelector(state => state.wishlist.ids.includes(gameId))
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [gameId])
     if (isLoading) {
         return (
             <main className={styles.page}>
