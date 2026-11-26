@@ -2,7 +2,9 @@ export type UserRole = 'user' | 'admin'
 
 export type UserStatus = 'active' | 'suspended'
 
-export type AuthProvider = 'email' | 'google' | 'steam' | 'discord'
+export type SocialAuthProvider = 'google' | 'facebook' | 'discord'
+
+export type AuthProvider = 'email' | 'steam' | SocialAuthProvider
 
 export interface User {
     id: number
@@ -54,4 +56,14 @@ export interface PasswordRecoveryRequest {
 export interface AuthSession {
     token: string
     user: User
+}
+
+/** Profile returned by the OAuth broker after the provider confirms the user. */
+export interface SocialAuthProfile {
+    provider: SocialAuthProvider
+    fullName: string
+    email: string
+    avatar: string
+    emailVerified: boolean
+    accessToken: string
 }
