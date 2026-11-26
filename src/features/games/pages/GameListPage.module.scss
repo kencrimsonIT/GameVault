@@ -6,7 +6,6 @@ $border: #3b4a3f;
 $text: #e2e2e6;
 $text-muted: #bacbbc;
 $primary: #00f090;
-$font-display: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
 $font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
 
 :global(body) {
@@ -31,25 +30,20 @@ $font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
 .header {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid $border;
+  gap: 8px 16px;
+  margin-bottom: 20px;
 }
 
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 24px;
-  padding: 16px;
-  border: 1px solid $border;
-  border-radius: 4px;
-  background-color: $surface;
 }
+
 .layout {
   display: grid;
   gap: 24px;
@@ -58,40 +52,22 @@ $font-body: 'Be Vietnam Pro', 'Space Grotesk', sans-serif;
     grid-template-columns: 260px minmax(0, 1fr);
   }
 }
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 8px;
-  color: $primary;
-  font-family: $font-display;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 
-  &::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background-color: $primary;
-  }
-}
 
 .title {
   margin: 0;
-  font-family: $font-display;
-  font-size: clamp(32px, 5vw, 44px);
+  font-size: 28px;
   font-weight: 700;
 }
 
 .summary {
   margin: 0;
   color: $text-muted;
+  font-size: 14px;
+}
 
-  strong {
-    color: $text;
-  }
+strong {
+  color: $text;
 }
 
 .grid {

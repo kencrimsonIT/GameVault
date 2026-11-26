@@ -90,16 +90,11 @@ export default function GameListPage() {
         <main className={styles.page}>
             <div className={styles.container}>
                 <header className={styles.header}>
-                    <div>
-                        <p className={styles.eyebrow}>Kho dữ liệu số</p>
-                        <h1 className={styles.title}>Khám phá Trò chơi</h1>
-                    </div>
+                    <h1 className={styles.title}>Danh sách game</h1>
                     <p className={styles.summary}>
-                        Hiển thị <strong>{sortedGames.length}</strong> / {games.length} trò chơi {''}
-                        · <strong>{wishlistCount}</strong> yêu thích
+                        {sortedGames.length}/{games.length} game · {wishlistCount} đã thích
                     </p>
                 </header>
-
                 <div className={styles.toolbar}>
                     <GameSearch value={keyword} onChange={handleKeywordChange}/>
                     <GameSort value={sortBy} onChange={handleSortChange}/>
